@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!-- SEO Optimization -->
+    <title>New Roots India | Professional Talent Management &amp; Production Support</title>
+    <meta
+        content="New Roots India provides expert talent management, legal services, and backend operational support for artists and production houses. The structure behind stardom since 2018."
+        name="description">
+    <meta
+        content="Talent Management India, Entertainment Legal Services, Production Backend Support, New Roots India, Artist Management Mumbai"
+        name="keywords">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Typography & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bs-body-bg: #111318;
+            --bs-body-color: #e2e2e8;
+            --deep-navy: #111318;
+            --accent-gold: #f5c400;
+            --surface-charcoal: #161B22;
+            --muted-gray: #8B949E;
+            --starlight-white: #F0F0F0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--deep-navy);
+            color: var(--bs-body-color);
+            overflow-x: hidden;
+        }
+
+        /* Utility Overrides & Custom Styles */
+        .text-accent-gold {
+            color: var(--accent-gold) !important;
+        }
+
+        .text-accent-dark {
+            color: var(--bs-body-bg) !important;
+        }
+
+        .bg-accent-gold {
+            background-color: var(--accent-gold) !important;
+        }
+
+        .border-accent-gold {
+            border-color: var(--accent-gold) !important;
+        }
+
+        .text-muted-gray {
+            color: var(--muted-gray) !important;
+        }
+
+        .text-starlight {
+            color: var(--starlight-white) !important;
+        }
+
+        .navbar {
+            height: 80px;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        .navbar-brand {
+            width: 110px;
+        }
+
+        .navbar.scrolled {
+            height: 65px;
+            background: rgba(17, 19, 24, 0.9) !important;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-link {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted-gray) !important;
+            position: relative;
+            margin: 0 1rem;
+        }
+
+        .nav-link:hover {
+            color: var(--starlight-white) !important;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #0c0e12;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 12px;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            border: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -10px rgba(245, 196, 0, 0.5);
+            background-color: var(--accent-gold);
+        }
+
+        .btn-outline-white {
+            border: 1px solid var(--starlight-white);
+            color: var(--starlight-white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 12px;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-white:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border-color: white;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.4);
+            animation: pulse-zoom 20s infinite alternate;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(17, 19, 24, 0.8) 0%, rgba(17, 19, 24, 0.4) 50%, rgba(17, 19, 24, 1) 100%);
+            z-index: 0;
+        }
+
+        @keyframes pulse-zoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        .glass-card {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 196, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            height: 100%;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(245, 196, 0, 0.4);
+            transform: translateY(-8px);
+            background: rgba(22, 27, 34, 0.9);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .expertise-img-card {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+            border-radius: 12px;
+            transition: transform 0.5s ease;
+        }
+
+        .expertise-img-card:hover {
+            transform: scale(1.01);
+        }
+
+        .expertise-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+
+        .expertise-img-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .expertise-content-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--deep-navy) 0%, rgba(17, 19, 24, 0.6) 60%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .modal-content.glass-card {
+            background: rgba(22, 27, 34, 0.95);
+            border: 1px solid rgba(245, 196, 0, 0.2);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mobile specific fixes */
+        @media (max-width: 768px) {
+            .display-1 {
+                font-size: 2.5rem !important;
+                font-weight: 800 !important;
+            }
+
+            .navbar-collapse {
+                background: var(--deep-navy);
+                padding: 2rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-link {
+                margin: 1rem 0;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+    <style>
+        body,
+        html {
+            overflow-x: hidden !important;
+            width: 100%;
+            position: relative;
+        }
+
+        .row {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container,
+        .container-fluid {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img alt="New Roots India" height="50"
+                    src="https://lh3.googleusercontent.com/aida/ADBb0ui8yN-CjtBwvLVUIQgpc9IjTga3rhh38k1Gib8LGlJAHc8UsOTa77I0_rtJqE8mAy355RNbjfY7I4uxGb8tyBo_uIo8OjraRtlOApQ2YOIuPh2HQUn7ddRUHrCyggmVkAhxO7jvxnH0gRMS2ZA_CSlSBT8m7KSxEVnvy6GF5rR9fHeNLmUY5lIfkr5M3RdefyCRsbYhJ1nbtNqOxAHEhgJzFUuiWKv6DzNh96OHXna6OLQ_DuGmNlEBkVU">
+            </a>
+            <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler border-0 text-starlight" data-bs-target="#navbarResponsive"
+                data-bs-toggle="collapse" type="button">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#expertise">Talent</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#legal">Legal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#backend">Backend</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+                        <a class="btn-gold d-block w-100" href="#contact">Inquire</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="hero-section overflow-hidden">
+        <div class="hero-bg">
+            <img alt="Creative background"
+                src="https://lh3.googleusercontent.com/aida/ADBb0ujZpAERHO5do1s-dcjuUfh8WlMfgnE2FQELNhNAElB30dqJleul8KFyQZ4URaKjkBsl9kqQhMndGOShMnCr80DVG-BjvVS9mpf-Y3sc0YSe051wPlkGCgaS6zUYLj3gscGjzrwSLZaI6vKmA6eBJ779d9MIvnOIhJ_-rWPF1zkS4_xBmkutqi0Y8fBCL6VDNEMEg37CicuXbFN0Kw3hVZvPsgCdcDp8e0loQr9QPY6w688ZM7KmqRLRtO8"
+                style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.4); animation: 20s ease 0s infinite alternate none running pulse-zoom; max-width: 100vw;">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container position-relative z-1 text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="display-1 fw-bolder text-starlight mb-4 reveal active">
+                        Empowering <span class="text-accent-gold">Talent.</span><br>
+                        Streamlining Production.
+                    </h1>
+                    <p class="lead text-muted-gray mb-5 mx-auto reveal active" style="max-width: 700px;">
+                        New Roots India stands for structure behind stardom, clarity behind creativity, and support
+                        behind success. We don't just manage talent—we build foundations for lasting careers.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 reveal active">
+                        <a class="btn-gold" href="#expertise">Explore Expertise</a>
+                        <a class="btn-outline-white" href="#about">Our Story</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 text-accent-gold animate-bounce">
+                <span class="material-symbols-outlined fs-2">expand_more</span>
+            </div> -->
+        </div>
+    </header>
+    <!-- About Us Section -->
+    <section class="py-5 bg-surface" id="about">
+        <div class="container py-lg-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 reveal active">
+                    <span class="text-accent-gold fw-bold text-uppercase ls-wide d-block mb-2"
+                        style="font-size: 12px; letter-spacing: 0.2em;">SINCE 2018</span>
+                    <h2 class="display-5 fw-bold text-starlight mb-4">Strengthening the Ecosystem Behind Creativity</h2>
+                    <div class="text-muted-gray mb-4">
+                        <p class="">At New Roots India, we exist to strengthen the ecosystem behind creativity. Founded
+                            in 2018, we were built on a simple yet powerful belief: when talent is supported by the
+                            right systems, it can truly flourish.</p>
+                        <p class="">The entertainment industry is dynamic, fast-paced, and often overwhelming. Behind
+                            every successful artist or seamless production lies a complex web of contracts, schedules,
+                            finances, compliance, and operations.</p>
+                        <p class="">We act as the backbone support for artists, creators, and production houses—quietly
+                            managing the business, logistics, and safeguards that allow creativity to take center stage.
+                        </p>
+                    </div>
+                    <div class="border-start border-4 border-accent-gold ps-4 py-2"
+                        style="background: rgba(22,27,34,0.5);">
+                        <p class="fst-italic fs-4 text-starlight mb-0">"While you focus on the art, we ensure the
+                            foundation beneath it is strong, secure, and stress-free."</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal active">
+                    <div class="position-relative">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-accent-gold opacity-10 rounded-4 blur-3xl"
+                            style="transform: translate(-10px, -10px); z-index: -1;"></div>
+                        <img alt="Professional discussion" class="img-fluid rounded-4 shadow-lg"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0uivdBgUDyNSa9Wp8eBJq0Tfkddo08pu-9qsnXaHCbaRda9WRNpF5h5JydefYWVbaU7fmaCNIVrGrRjKQKe8rHG3HjkhdxarzWGCzSb-WSp00gM5TqgS836ivFVv1Ehlc5o9SemP0veYO6g-LylU5PvFdh2pOL6RoQtQCq45K8WwM-bpSO7t4UhlTiqD0_G_TtiecqWH1rnWFaeNjt6c95F-tiAOJ-qpMQ6i-Qx3LufZz30-pspwwF6YHUbv"
+                            style="min-height: 500px; object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Expertise -->
+    <section class="py-5" id="expertise">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5 reveal active">
+                <h2 class="display-4 fw-bold text-starlight mb-3">Our Expertise</h2>
+                <p class="text-muted-gray mx-auto" style="max-width: 750px;">
+                    Seamlessly bridging creativity with structure. We bring together talent management, legal insight,
+                    and operational excellence to support your journey.
+                </p>
+            </div>
+            <div class="row g-4">
+                <!-- Talent Management -->
+                <div class="col-md-8 reveal active">
+                    <div class="expertise-img-card shadow" id="talent">
+                        <img alt="Talent Management"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0uhpQNWdDY3tXKoVwI1Y9ojIVspsxwvJ8DeiBISRrBjLZXbqGNBbTPN7szFwxyt9cmLPwzFXATVsc0JvQ2nvsna0uOnnf_P2vwC0xSJV4rNpS_JHsTb6mWMa8u-CThLaek4047sqzJtTuHSB04T9vqlZTpPzNJ0iUXV7h1r-3nLE2aaDsZjbw5AU-7BoNywY_Jvca77zJ-Q7LnbSRuANbTI8GZXIEWG6b-_X8F1ckI49R-lENQMnwCkE4hl3"
+                            class="img-fluid">
+                        <div class="expertise-content-overlay">
+                            <h3 class="h2 text-accent-gold fw-bold mb-3">Talent Management</h3>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <ul class="list-unstyled text-starlight opacity-75 small">
+                                        <li class="mb-1"><span
+                                                class="material-symbols-outlined fs-6 text-accent-gold align-middle me-1">check_circle</span>
+                                            Career strategy</li>
+                                        <li class=""><span
+                                                class="material-symbols-outlined fs-6 text-accent-gold align-middle me-1">check_circle</span>
+                                            Negotiations</li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <ul class="list-unstyled text-starlight opacity-75 small">
+                                        <li class="mb-1"><span
+                                                class="material-symbols-outlined fs-6 text-accent-gold align-middle me-1">check_circle</span>
+                                            Brand collaborations</li>
+                                        <li class=""><span
+                                                class="material-symbols-outlined fs-6 text-accent-gold align-middle me-1">check_circle</span>
+                                            Relationship mgmt</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Legal Services -->
+                <div class="col-md-4 reveal active">
+                    <div class="glass-card p-4 rounded-4 d-flex flex-column justify-content-between overflow-hidden"
+                        id="legal">
+                        <div>
+                            <div class="d-inline-flex p-3 rounded bg-accent-gold bg-opacity-10 text-accent-dark mb-4">
+                                <span class="material-symbols-outlined">gavel</span>
+                            </div>
+                            <h3 class="h3 text-starlight fw-bold mb-3">Legal Services</h3>
+                            <p class="text-muted-gray small">In an industry where contracts define careers, clarity and
+                                protection are essential.</p>
+                        </div>
+                        <ul class="list-unstyled text-starlight small fw-bold mt-4" style="letter-spacing: 0.1em;">
+                            <li class="mb-2">/ CONTRACT DRAFTING</li>
+                            <li class="mb-2">/ IP PROTECTION</li>
+                            <li class="">/ RISK ASSESSMENT</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Backend Support -->
+                <div class="col-md-4 reveal active">
+                    <div class="glass-card p-4 rounded-4 d-flex flex-column justify-content-between overflow-hidden"
+                        id="backend">
+                        <div>
+                            <div class="d-inline-flex p-3 rounded bg-accent-gold bg-opacity-10 text-accent-dark mb-4">
+                                <span class="material-symbols-outlined">settings_suggest</span>
+                            </div>
+                            <h3 class="h3 text-starlight fw-bold mb-3">Backend Support</h3>
+                            <p class="text-muted-gray small">Eliminating friction so creativity can thrive without
+                                distractions.</p>
+                        </div>
+                        <div class="mt-4">
+                            <div class="progress bg-dark rounded-pill mb-1" style="height: 6px;">
+                                <div class="progress-bar bg-accent-gold" style="width: 85%;"></div>
+                            </div>
+                            <span class="text-muted-gray text-uppercase fw-bold"
+                                style="font-size: 10px; letter-spacing: 0.1em;">Efficiency Rating 85%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Backend Visual -->
+                <div class="col-md-8 reveal active">
+                    <div class="expertise-img-card shadow">
+                        <img alt="Backend Operations"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0ujm77oM2yKvUReVuF3rMZyndN22woQsWOc9Gk_rjOiXjkl0W5YeiAipb6qhlW6oGg3dvaksu4FrmvXQmfurtNoc6EgXYjTFTEmXiVEGCDW2-p4XnNwBRhveAI_0-AMoPLY6fi0qsZ422reNT4wee4xaOxKz_NFXZwL2BmrMuwkwbhBa7f_bKpPfq2G5StF_u860sKx9ffnJJoNZFBuYc7ZeA_yboJKQQI73t7H142Pb1rtxd0UL74B3tL0I"
+                            class="img-fluid">
+                        <div class="expertise-content-overlay"
+                            style="background: linear-gradient(to right, var(--deep-navy) 0%, rgba(17,19,24,0.4) 60%, transparent 100%); width: 70%;">
+                            <h3 class="h2 text-starlight fw-bold mb-3">Stress-Free Operations</h3>
+                            <p class="text-starlight opacity-75 lead mb-0">Financial planning, payments, and workflow
+                                optimization delivered with surgical precision.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-black bg-opacity-25 overflow-hidden" id="testimonials">
+        <div class="container py-lg-5">
+            <div class="text-center mb-5 reveal active">
+                <span class="text-accent-gold fw-bold text-uppercase d-block mb-2"
+                    style="font-size: 12px; letter-spacing: 0.2em;">CLIENT VOICES</span>
+                <h2 class="display-4 fw-bold text-starlight">What People Say</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 reveal active">
+                    <div class="glass-card p-5 rounded-4 text-center overflow-hidden">
+                        <p class="fs-4 text-starlight fst-italic mb-4">
+                            “Working with New roots India (Ruchi and Hardik ) since 2018 has been one of the most
+                            reassuring parts of my professional journey. Their dedication, consistency and
+                            professionalism have always stood out.”
+                        </p>
+                        <button class="btn btn-link text-accent-gold text-decoration-none fw-bold mb-4 ls-wider p-0"
+                            data-bs-target="#testimonialModal" data-bs-toggle="modal" style="font-size: 12px;">READ
+                            MORE</button>
+                        <div class="d-flex flex-column align-items-center">
+                            <div class="mb-3">
+                                <!-- <img alt="Film Actor" class="rounded-circle border border-2 border-accent-gold p-1"
+                                    height="80"
+                                    src="https://lh3.googleusercontent.com/aida/ADBb0ujrv1jkXDJjTGMeS0zkcKRQn6EpqwM0WicvIVgw52LhPH3ENwf1qgx7a-6-89MEU5_glsdfopL9FBcwI_XGPcggFbGzsVgqb0oHiLgTKWf9aeSbYsgvX6Wa9ubVFiWsnQKgQYmPvy-IZVPylYM0XHzgBNDnanM2LAt3SXOkUHgl_ZzFdLfkPiUhhgWByFMdonCa37FVdu6w6nqjDEnkGYJ75fVLcMumcBX5J8-9sygVgmuRvTvrJqNBrQu_"
+                                    style="object-fit: cover;" width="80"> -->
+                            </div>
+                            <span class="text-accent-gold fw-bold text-uppercase small ls-wide">Film Actor -  Shruti Marathe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Us Section -->
+    <section class="py-5" id="contact">
+        <div class="container py-lg-5">
+            <div class="row g-5">
+                <div class="col-lg-6 reveal active">
+                    <h2 class="display-4 fw-bold text-starlight mb-4">Contact Us</h2>
+                    <p class="text-muted-gray mb-5 fs-5">
+                        Let’s talk. Whether you’re an artist, creator, or production house, we’d love to understand how
+                        we can support your journey.
+                    </p>
+                    <div class="d-flex align-items-start mb-4">
+                        <span class="material-symbols-outlined text-accent-gold me-3 mt-1">location_on</span>
+                        <div>
+                            <h4 class="h6 text-starlight fw-bold text-uppercase ls-wide mb-1">Address</h4>
+                            <p class="text-muted-gray mb-0">New Roots India<br>Borivali (West), Mumbai, Maharashtra, India</p>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start mb-4">
+                        <span class="material-symbols-outlined text-accent-gold me-3 mt-1">call</span>
+                        <div>
+                            <h4 class="h6 text-starlight fw-bold text-uppercase ls-wide mb-1">Phone</h4>
+                            <a class="text-muted-gray text-decoration-none" href="tel:+919920332240">+91 99203 32240</a>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                        <span class="material-symbols-outlined text-accent-gold me-3 mt-1">mail</span>
+                        <div>
+                            <h4 class="h6 text-starlight fw-bold text-uppercase ls-wide mb-1">Email</h4>
+                            <a class="text-muted-gray text-decoration-none"
+                                href="mailto:contact@newrootsindia.com">contact@newrootsindia.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal active">
+                    <div class="glass-card p-5 rounded-4 overflow-hidden">
+                        <form>
+                            <div class="mb-4">
+                                <label
+                                    class="form-label text-accent-gold small fw-bold text-uppercase ls-wide">Name</label>
+                                <input
+                                    class="form-control bg-transparent border-0 border-bottom border-secondary rounded-0 text-starlight p-0 pb-2 shadow-none"
+                                    placeholder="John Doe" type="text">
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label
+                                        class="form-label text-accent-gold small fw-bold text-uppercase ls-wide">Email</label>
+                                    <input
+                                        class="form-control bg-transparent border-0 border-bottom border-secondary rounded-0 text-starlight p-0 pb-2 shadow-none"
+                                        placeholder="you@example.com" type="email">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <label
+                                        class="form-label text-accent-gold small fw-bold text-uppercase ls-wide">Phone</label>
+                                    <input
+                                        class="form-control bg-transparent border-0 border-bottom border-secondary rounded-0 text-starlight p-0 pb-2 shadow-none"
+                                        placeholder="+91 XXXXX XXXXX" type="tel">
+                                </div>
+                            </div>
+                            <div class="mb-5">
+                                <label
+                                    class="form-label text-accent-gold small fw-bold text-uppercase ls-wide">Message</label>
+                                <textarea
+                                    class="form-control bg-transparent border-0 border-bottom border-secondary rounded-0 text-starlight p-0 pb-2 shadow-none"
+                                    placeholder="Tell us about your requirements..." rows="3"></textarea>
+                            </div>
+                            <button class="btn-gold w-100" type="submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-5 mb-5">
+                <div class="col-lg-6">
+                    <img alt="Logo" class="mb-4" height="20" style="max-width: 200px;"
+                        src="https://lh3.googleusercontent.com/aida/ADBb0ui8yN-CjtBwvLVUIQgpc9IjTga3rhh38k1Gib8LGlJAHc8UsOTa77I0_rtJqE8mAy355RNbjfY7I4uxGb8tyBo_uIo8OjraRtlOApQ2YOIuPh2HQUn7ddRUHrCyggmVkAhxO7jvxnH0gRMS2ZA_CSlSBT8m7KSxEVnvy6GF5rR9fHeNLmUY5lIfkr5M3RdefyCRsbYhJ1nbtNqOxAHEhgJzFUuiWKv6DzNh96OHXna6OLQ_DuGmNlEBkVU">
+                    <p class="text-muted-gray mb-4" style="max-width: 450px;">
+                        The structure behind stardom. Empowering talent and streamlining production through expert
+                        management, legal, and operational support since 2018.
+                    </p>
+                    <!-- <div class="d-flex gap-3">
+                        <a class="btn btn-outline-secondary p-2 d-flex align-items-center justify-content-center"
+                            href="#" style="width: 40px; height: 40px;"><span
+                                class="material-symbols-outlined fs-5">facebook</span></a>
+                        <a class="btn btn-outline-secondary p-2 d-flex align-items-center justify-content-center"
+                            href="#" style="width: 40px; height: 40px;"><span
+                                class="material-symbols-outlined fs-5">photo_camera</span></a>
+                    </div> -->
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-starlight fw-bold text-uppercase ls-wide mb-4">Expertise</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a class="text-muted-gray text-decoration-none" href="#talent">Talent</a></li>
+                        <li class="mb-3"><a class="text-muted-gray text-decoration-none" href="#legal">Legal</a></li>
+                        <li class=""><a class="text-muted-gray text-decoration-none" href="#backend">Backend</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="text-starlight fw-bold text-uppercase ls-wide mb-4">Resources</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><a class="text-muted-gray text-decoration-none"
+                                href="#testimonials">Testimonials</a></li>
+                        <li class="mb-3"><a class="text-muted-gray text-decoration-none" href="#contact">Contact</a>
+                        </li>
+                        <!-- <li class=""><a class="text-muted-gray text-decoration-none" href="#">Press Kit</a></li> -->
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="pt-5 border-top border-secondary border-opacity-10 d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+                <p class="text-muted-gray text-uppercase mb-0" style="font-size: 10px; letter-spacing: 0.2em;">© 2026
+                    NEW ROOTS INDIA. ALL RIGHTS RESERVED.</p>
+                <!-- <div class="d-flex gap-4">
+                    <a class="text-muted-gray text-decoration-none text-uppercase fw-bold" href="#"
+                        style="font-size: 10px; letter-spacing: 0.1em;">Privacy Policy</a>
+                    <a class="text-muted-gray text-decoration-none text-uppercase fw-bold" href="#"
+                        style="font-size: 10px; letter-spacing: 0.1em;">Terms of Service</a>
+                    <a class="text-muted-gray text-decoration-none text-uppercase fw-bold" href="#"
+                        style="font-size: 10px; letter-spacing: 0.1em;">Careers</a>
+                </div> -->
+            </div>
+        </div>
+    </footer>
+    <!-- Testimonial Modal -->
+    <div aria-hidden="true" aria-labelledby="testimonialModalLabel" class="modal fade" id="testimonialModal"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content glass-card rounded-4 border-0 overflow-hidden">
+                <div class="modal-header border-0 pb-0">
+                    <button aria-label="Close" class="btn-close btn-close-white ms-auto shadow-none"
+                        data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body p-5 pt-2">
+                    <span class="material-symbols-outlined text-accent-gold fs-1 mb-4">format_quote</span>
+                    <p class="fs-4 text-starlight fst-italic mb-5 leading-relaxed">
+                        Working with New roots India (Ruchi and Hardik ) since 2018 has been one of the most reassuring
+                        parts of my professional journey. Their dedication, consistency and professionalism have always
+                        stood out.
+                    </p>
+                    <p class="fs-4 text-starlight fst-italic mb-5 leading-relaxed">
+                        Ruchi handles every conversation, follow-up and negotiation with great clarity and efficiency.
+                        She is extremely proactive, dependable and always ensures communication flows smoothly.
+                    </p>
+                   <p class="fs-4 text-starlight fst-italic mb-5 leading-relaxed">
+                        Hardik has been equally meticulous when it comes to invoices, payments and financial follow-ups.
+                        Everything is always handled in a systematic and transparent manner, which gives me peace of
+                        mind.
+                    </p>
+                   <p class="fs-4 text-starlight fst-italic mb-5 leading-relaxed">
+                        What I truly value is the comfort and trust I share with them. I have always been able to openly
+                        discuss any work-related concern or challenge with them, and they consistently make the effort
+                        to find practical and manageable solution. That sense of support makes a huge difference for me.
+                    </p>
+                   <p class="fs-4 text-starlight fst-italic mb-5 leading-relaxed">
+                        Together, they make an incredibly strong team — supportive, hardworking and genuinely invested .
+                        I truly value the association and appreciate all the effort they put in behind the scenes.
+                        Looking forward to mang more years with NEW ROOTS INDIA
+                    </p>
+                    <div class="d-flex align-items-center gap-3 pt-4 border-top border-secondary border-opacity-25">
+                        <!-- <img alt="Client" class="rounded-circle" height="60"
+                            src="https://lh3.googleusercontent.com/aida/ADBb0ujrv1jkXDJjTGMeS0zkcKRQn6EpqwM0WicvIVgw52LhPH3ENwf1qgx7a-6-89MEU5_glsdfopL9FBcwI_XGPcggFbGzsVgqb0oHiLgTKWf9aeSbYsgvX6Wa9ubVFiWsnQKgQYmPvy-IZVPylYM0XHzgBNDnanM2LAt3SXOkUHgl_ZzFdLfkPiUhhgWByFMdonCa37FVdu6w6nqjDEnkGYJ75fVLcMumcBX5J8-9sygVgmuRvTvrJqNBrQu_"
+                            style="object-fit: cover;" width="60"> -->
+                        <div>
+                            <h5 class="text-starlight fw-bold mb-0">Client Story</h5>
+                            <span class="text-accent-gold text-uppercase small ls-wide">Film Actor - Shruti Marathe </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navigation scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const navHeight = 80;
+                    const targetPosition = targetElement.offsetTop - navHeight;
+
+                    // Close mobile nav if open
+                    const bsCollapse = bootstrap.Collapse.getInstance(document.getElementById('navbarResponsive'));
+                    if (bsCollapse) bsCollapse.hide();
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
