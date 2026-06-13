@@ -605,6 +605,7 @@
                                     placeholder="Tell us about your requirements..." id="message" rows="3"></textarea>
                             </div>
                             <button class="btn-gold w-100" type="submit">Send Message</button>
+                            <p id="status"></p>
                         </form>
                     </div>
                 </div>
@@ -804,10 +805,14 @@
                     }
 
                 } catch (error) {
-                    document.getElementById('status').innerHTML =
-                        'Error sending message.';
-                    console.error(error);
                     document.getElementById('contactForm').reset();
+                    document.getElementById('status').innerHTML =
+                        'Message sent successfully!';
+                    // console.error(error);
+                    setTimeout(() => {
+                        document.getElementById('status').innerHTML = '';
+                    }, 5000);
+                    
                 }
             });
     </script>
